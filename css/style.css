@@ -1,0 +1,105 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(210, 255, 255);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Arial";
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+}
+
+header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 50px;
+    padding: 10px 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(47, 47, 47);
+}
+
+header>a {
+    position: relative;
+    height: 100%;
+}
+
+#headerLogo {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: calc(100% - 30px);
+    padding: 10px 20px;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    transition: all 0.5s ease;
+}
+
+#headerLogoHover {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: calc(100% - 30px);
+    padding: 10px 20px;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.25);
+    border: 5px solid rgb(255, 255, 255);
+    border-radius: 50px;
+    transition: all 0.5s ease;
+}
+
+header>a:hover #headerLogo {
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+header>a:hover #headerLogoHover {
+    opacity: 1;
+    transition: all 0.5s ease;
+}
+
+header>nav {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+header>nav>ul
+{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+header>nav>ul>li
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+
+
+main {
+    width: 50%;
+    height: 1;
+    margin-top: 70px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: 1px solid rgb(0, 0, 0);
+}
