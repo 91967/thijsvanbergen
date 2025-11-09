@@ -1,16 +1,39 @@
 body {
+    position: relative;
     margin: 0px;
     padding: 0px;
-    background-color: rgb(210, 255, 255);
+    background-color: rgb(0, 0, 0);
+    animation: bgFadeIn 1.5s ease 0.25s forwards;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+body::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/grain-dark.png);
+    background-size: 10rem;
+    content: "";
+    opacity: 0.08;
+    pointer-events: none;
+    z-index:-5;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
     margin: 0px;
     padding: 0px;
-    font-family: "Arial";
+    font-family: "Alegreya Sans";
     text-decoration: none;
     color: rgb(0, 0, 0);
     background-color: transparent;
+}
+
+ul {
+    padding: 0px;
+    padding-inline-start: 0px;
+    margin: 0px;
+    margin-inline-start: 0px;
 }
 
 header {
@@ -23,60 +46,67 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(47, 47, 47);
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(237, 229, 213);
+    transform: translateY(-100%);
+    animation: headerSlide 1s ease 1.5s forwards;
 }
 
 header>a {
     position: relative;
     height: 100%;
+    width: 35%;
 }
 
-#headerLogo {
+#header-logo {
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    height: calc(100% - 30px);
+    padding: 15px 25px;
+    opacity: 1;
+    font-family: "Press Start 2P";
+    color: rgb(0, 128, 0);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+#header-logo-hover {
+    width: 100%;
     position: absolute;
     top: 0px;
     left: 0px;
     height: calc(100% - 30px);
-    padding: 10px 20px;
-    opacity: 1;
-    background-color: rgba(255, 255, 255, 0.25);
-    border: 5px solid rgb(255, 255, 255);
-    border-radius: 50px;
-    transition: all 0.5s ease;
-}
-
-#headerLogoHover {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: calc(100% - 30px);
-    padding: 10px 20px;
+    padding: 15px 25px;
     opacity: 0;
-    background-color: rgba(255, 255, 255, 0.25);
-    border: 5px solid rgb(255, 255, 255);
-    border-radius: 50px;
-    transition: all 0.5s ease;
+    font-family: "Press Start 2P";
+    color: rgb(0, 128, 0);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    transition: all 0.4s ease;
 }
 
-header>a:hover #headerLogo {
+header>a:hover #header-logo {
     opacity: 0;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
 }
 
-header>a:hover #headerLogoHover {
+header>a:hover #header-logo-hover {
     opacity: 1;
-    transition: all 0.5s ease;
+    transition: all 0.4s ease;
 }
 
 header>nav {
-    width: 50%;
+    width: 65%;
     height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
 }
 
-header>nav>ul
-{
+header>nav>ul {
     padding: 0px;
     margin: 0px;
     width: 100%;
@@ -85,21 +115,261 @@ header>nav>ul
     list-style-type: none;
 }
 
-header>nav>ul>li
-{
+header>nav>ul>li {
+    width: 20%;
+    margin: 1.25%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-family: "Alegreya Sans";
+}
+
+header>nav>ul>li>a {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    transition: all 0.25s ease;
+}
+
+header>nav>ul>li>a:hover {
+    color: rgb(0, 128, 0);
+    transition: all 0.25s ease;
+}
+
+#lang-select {
+    position: relative;
+    width: 10%;
+    padding: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+#lang-select>img {
+    height: 100%;
+    margin-left: 7px;
+    border-radius: 50%;
+}
+
+#lang-select>ul {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    display: none;
+    list-style: none;
+    cursor: pointer;
+}
+
+.lang-hover::after {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: calc(100% + 10px);
+    background: transparent;
+    cursor: pointer;
+}
+
+.lang-hover>ul {
+    display: flex !important;
+    flex-direction: column !important;
+    background-color: rgb(255, 255, 255) !important;
+    border: 1px solid rgb(194, 194, 194) !important;
+    border-radius: 5px !important;
+    z-index: 997 !important;
+}
+
+.lang-hover:hover >ul>li {
+    width: 100% !important;
+    display: flex !important;
+    z-index: 998 !important;
+}
+
+.lang-hover:hover >ul>li>a {
+    padding: 8px;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    color: rgb(0, 0, 0) !important;
+    cursor: pointer !important;
+    z-index: 999 !important;
+    transition: all 0.4s ease !important;
+}
+
+.lang-hover>ul>li>a:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+    color: rgb(0, 128, 0) !important;
+    transition: all 0.4s ease !important;
+}
+
+.lang-hover:hover >ul>li>a>span {
+    width: 50% !important;
+    text-align: center !important;
+}
+
+.lang-hover:hover >ul>li>a>img {
+    width: 50% !important;
+    margin-left: 5px !important;
+    border-radius: 50% !important;
 }
 
 
 
+
+
 main {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    padding-top: 70px;
+}
+
+main>section {
+    min-height: 30vh;
     width: 50%;
-    height: 1;
-    margin-top: 70px;
-    margin-left: 25%;
-    margin-right: 25%;
-    border: 1px solid rgb(0, 0, 0);
+    padding: 0px 25%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+#home-welcome-screen {
+    padding-top: 20px;
+    height: calc(70vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#home-welcome-screen>div {
+    height: 100%;
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home-welcome-screen>div>div {
+    height: calc(100% / 3);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#home-welcome-more_info_button {
+    align-items: center;
+}
+
+#home-welcome-main-info {
+    align-items: flex-start;
+}
+
+#home-title-1, #home-title-2, #home-subtitle-1 {
+    color: rgb(0, 128, 0);
+    display: inline-block;
+    overflow: hidden;
+    white-space: pre-wrap;
+    width: max-content
+}
+
+#home-title-1, #home-title-2 {
+    font-family: "Press Start 2P";
+    font-size: 21px;
+}
+
+#home-subtitle-1 {
+    font-family: "Alegreya Sans";
+    font-size: 15px;
+}
+
+#home-welcome-image_wrapper>img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 100%;
+    max-width: 45%;
+    background: linear-gradient(rgb(255, 255, 255), rgb(32, 64, 32));
+}
+
+#home-startbutton {
+    opacity: 0;
+}
+
+.home-startbutton-visible {
+    animation: fadeIn 0.5s forwards;
+}
+
+
+
+
+
+
+
+
+
+#home-about_me-screen {
+    height: 70vh;
+    /* background-color: rgba(255, 255, 255, 0.5); */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    height: 60vh;
+    background-color: rgb(0, 48, 0);
+}
+
+
+/* animations */
+
+@keyframes bgFadeIn {
+    from {
+        background-color: rgb(0, 0, 0);
+    }
+    to {
+        background-color: rgb(252, 245, 237);
+    }
+}
+
+@keyframes headerSlide {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(+5%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

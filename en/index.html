@@ -3,37 +3,44 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,
-                wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;
-                1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&display=swap" />
+    <link rel="icon" type="image/x-icon" href="../img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/home.js"></script>
     <title>Home</title>
 </head>
 <body>
     <header>
-        <a href="">
-            <img id="headerLogo" src="../img/logo.png" />
-            <img id="headerLogoHover" src="../img/logo_home.png" />
+        <a href="/en/">
+            <div id="header-logo">Thijs van Bergen</div>
+            <div id="header-logo-hover">Home</div>
         </a>
         <nav>
             <ul>
-                <li>Resume</li>
-                <li>test2</li>
-                <li>test3</li>
-                <li>test4</li>
+                <li><a href="/en/about_me/">About Me</a></li>
+                <li><a href="/en/education/">Education</a></li>
+                <li><a href="/en/projects/">Projects</a></li>
+                <li><a href="/en/contact/">Contact</a></li>
+                <li id="lang-select"><span>EN</span><img src="../svg/flag_uk.svg" />
+                    <ul>
+                        <li><a href="../nl/"><span>NL</span><img src="../svg/flag_nl.svg" /></a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Welcome to My Website</h1>
-        <a href="about_me">Go to About Me</a>
-        <iframe src="resume.pdf" width="100%" height="600px">
-            This browser does not support PDFs.  
-            <a href="resume.pdf">Download the PDF</a>
-        </iframe>
+        <section id="home-welcome-screen">
+            <div>
+                <div>
+                    <h1>Hello, I'm Thijs van Bergen</h1>
+                    <h2>Third year Software Developer<br />at Ter AA College in Helmond</h2>
+                </div>
+                <img src="../img/pfp.png" />
+            </div>
+        </section>
     </main>
 </body>
 </html>
