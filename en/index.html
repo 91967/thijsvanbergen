@@ -8,38 +8,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/layout.js"></script>
     <script src="../js/home.js"></script>
     <title>Home</title>
 </head>
-<body>
-    <header>
-        <a href="/en/">
-            <div id="header-logo">Thijs van Bergen</div>
-            <div id="header-logo-hover">Home</div>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="/en/about_me/">About Me</a></li>
-                <li><a href="/en/education/">Education</a></li>
-                <li><a href="/en/projects/">Projects</a></li>
-                <li><a href="/en/contact/">Contact</a></li>
-                <li id="lang-select"><span>EN</span><img src="../svg/flag_uk.svg" />
-                    <ul>
-                        <li><a href="../nl/"><span>NL</span><img src="../svg/flag_nl.svg" /></a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<body data-lang="en">
+    <header></header>
     <main>
         <section id="home-welcome-screen">
             <div>
                 <div>
-                    <h1>Hello, I'm Thijs van Bergen</h1>
-                    <h2>Third year Software Developer<br />at Ter AA College in Helmond</h2>
+                    <h1 id="home-title-1">Hello.</h1>
+                    <h1 id="home-title-2">I'm Thijs van Bergen.</h1>
+                    <h2 id="home-subtitle-1">Third year software Developer student at Ter AA College in Helmond.</h2>
                 </div>
-                <img src="../img/pfp.png" />
+                <div id="home-welcome-more_info_button">
+                    <a id="home-startbutton" class = "home-startbutton-visible" href="/nl/over_mij/">Leer meer over mij</a>
+                </div>
             </div>
+            <img src="../img/pfp.png" />
+        </section>
+        <section id="home-about_me-screen">
+
+        </section>
+        <section id="home-education-screen">
+
         </section>
     </main>
 </body>

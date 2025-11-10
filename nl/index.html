@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,42 +8,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/layout.js"></script>
     <script src="../js/home.js"></script>
     <title>Home</title>
 </head>
-<body>
-    <header>
-        <a href="/nl/">
-            <div id="header-logo">Thijs van Bergen</div>
-            <div id="header-logo-hover">Home</div>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="/nl/over_mij/">Over Mij</a></li>
-                <li><a href="/nl/onderwijs/">Onderwijs</a></li>
-                <li><a href="/nl/projecten/">Projecten</a></li>
-                <li><a href="/nl/contact/">Contact</a></li>
-                <li id="lang-select"><span>NL</span><img src="../svg/flag_nl.svg" />
-                    <ul>
-                        <li><a href="../en/"><span>EN</span><img src="../svg/flag_uk.svg" /></a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<body data-lang="nl">
+    <header></header>
     <main>
         <section id="home-welcome-screen">
             <div>
                 <div>
                     <h1 id="home-title-1">Hallo.</h1>
                     <h1 id="home-title-2">Ik ben Thijs van Bergen.</h1>
-                    <h2 id="home-subtitle-1">Derdejaars Software Ontwikkelaar student bij het Ter AA College in Helmond.</h2>
+                    <h2 id="home-subtitle-1">Derdejaars software ontwikkelaar student bij het Ter AA College in Helmond.</h2>
                 </div>
                 <div id="home-welcome-more_info_button">
-                    <a id="home-startbutton" href="/nl/over_mij/">Leer meer over mij</a>
+                    <a id="home-startbutton" class="home-startbutton-visible" href="/nl/over_mij/">Leer meer over mij</a>
                 </div>
             </div>
-            <!-- <img src="../img/pfp.png" /> -->
+            <img src="../img/pfp.png" />
         </section>
         <section id="home-about_me-screen">
 
@@ -52,8 +35,6 @@
 
         </section>
     </main>
-    <footer>
-
-    </footer>
+    <footer></footer>
 </body>
 </html>

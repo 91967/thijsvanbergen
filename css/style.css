@@ -29,6 +29,20 @@ h1, h2, h3, h4, h5, h6, p, a {
     background-color: transparent;
 }
 
+#not-redirected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    width: 100%;
+    height: calc(100vh - 70px);
+}
+
+#not-redirected a {
+    color: rgb(0, 0, 255);
+    text-decoration: underline;
+}
+
 ul {
     padding: 0px;
     padding-inline-start: 0px;
@@ -292,7 +306,7 @@ main>section {
     font-size: 15px;
 }
 
-#home-welcome-image_wrapper>img {
+#home-welcome-screen>img {
     width: 100%;
     aspect-ratio: 1;
     border-radius: 10px;
