@@ -2,8 +2,7 @@ body {
     position: relative;
     margin: 0px;
     padding: 0px;
-    background-color: rgb(0, 0, 0);
-    animation: bgFadeIn 1.5s ease 0.25s forwards;
+    background-color: rgb(252, 245, 237);
 }
 
 body::before {
@@ -62,8 +61,7 @@ header {
     align-items: center;
     background-color: rgb(255, 255, 255);
     border-bottom: 1px solid rgb(237, 229, 213);
-    transform: translateY(-100%);
-    animation: headerSlide 1s ease 1.5s forwards;
+    z-index: 1000000;
 }
 
 header>a {
@@ -74,31 +72,39 @@ header>a {
 
 #header-logo {
     position: absolute;
-    width: 100%;
+    width: calc(100% - 50px);
     top: 0px;
     left: 0px;
     height: calc(100% - 30px);
     padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 1;
     font-family: "Press Start 2P";
     color: rgb(0, 128, 0);
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
     text-align: center;
+    font-size: clamp(0.625rem, 0.5vw + 0.3rem, 0.9rem);
     transition: all 0.4s ease;
 }
 
 #header-logo-hover {
-    width: 100%;
     position: absolute;
+    width: calc(100% - 50px);
     top: 0px;
     left: 0px;
     height: calc(100% - 30px);
     padding: 15px 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity: 0;
     font-family: "Press Start 2P";
     color: rgb(0, 128, 0);
-    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.8);
     text-align: center;
+    font-size: clamp(0.625rem, 0.5vw + 0.3rem, 0.9rem);
     transition: all 0.4s ease;
 }
 
@@ -270,10 +276,11 @@ main>section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
 }
 
 #home-welcome-screen>div>div {
-    height: calc(100% / 3);
+    height: 50%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -293,7 +300,9 @@ main>section {
     display: inline-block;
     overflow: hidden;
     white-space: pre-wrap;
-    width: max-content
+    width: max-content;
+    max-width: 100%;
+    word-wrap: break-word;
 }
 
 #home-title-1, #home-title-2 {
@@ -306,24 +315,18 @@ main>section {
     font-size: 15px;
 }
 
-#home-welcome-screen>img {
+#home-welcome-img-container>img {
+    height: 100%;
     width: 100%;
     aspect-ratio: 1;
     border-radius: 10px;
     object-fit: cover;
-    max-height: 100%;
-    max-width: 45%;
     background: linear-gradient(rgb(255, 255, 255), rgb(32, 64, 32));
 }
 
 #home-startbutton {
     opacity: 0;
 }
-
-.home-startbutton-visible {
-    animation: fadeIn 0.5s forwards;
-}
-
 
 
 
@@ -359,6 +362,24 @@ footer {
 
 /* animations */
 
+.bg-fade-in {
+    background-color: rgb(0, 0, 0);
+    animation: bgFadeIn 1.25s ease 0.5s forwards;
+}
+
+.header-slide-in {
+    transform: translateY(-100%);
+    animation: headerSlideIn 0.75s ease 1.25s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-in-from-right {
+    animation: slideInFromRight 2.5s ease forwards;
+}
+
 @keyframes bgFadeIn {
     from {
         background-color: rgb(0, 0, 0);
@@ -368,7 +389,7 @@ footer {
     }
 }
 
-@keyframes headerSlide {
+@keyframes headerSlideIn {
     from {
         transform: translateY(-100%);
     }
@@ -385,5 +406,14 @@ footer {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0%);
     }
 }

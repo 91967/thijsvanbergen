@@ -39,6 +39,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         })
 
-        document.documentElement.lang = currentLang;
+        document.documentElement.lang = pathParts[0];
     }
 });

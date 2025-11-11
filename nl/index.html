@@ -8,8 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/animator.js"></script>
     <script src="../js/layout.js"></script>
-    <script src="../js/home.js"></script>
+    <script src="../js/animations/home.js"></script>
     <title>Home</title>
 </head>
 <body data-lang="nl">
@@ -23,10 +24,12 @@
                     <h2 id="home-subtitle-1">Derdejaars software ontwikkelaar student bij het Ter AA College in Helmond.</h2>
                 </div>
                 <div id="home-welcome-more_info_button">
-                    <a id="home-startbutton" class="home-startbutton-visible" href="/nl/over_mij/">Leer meer over mij</a>
+                    <a id="home-startbutton" class="fade-in" href="/nl/over_mij/">Leer meer over mij</a>
                 </div>
             </div>
-            <img src="../img/pfp.png" />
+            <div id="home-welcome-img-container">
+                <img id="home-welcome-pfp" src="../img/pfp.png" />
+            </div>
         </section>
         <section id="home-about_me-screen">
 

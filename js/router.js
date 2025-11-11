@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const introKey = "IntroPlayed";
 
     const navEntry = performance.getEntriesByType("navigation")[0];
-    const isReload = navEntry && navEntry.type === "reload";
+    const isReload = navEntry && navEntry.type == "reload";
     if (isReload) {
         Object.keys(sessionStorage).forEach(key => {
             if (key.endsWith(introKey) && !key == "page" + introKey) {
